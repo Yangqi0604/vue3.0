@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "serve": "cross-env NODE_ENV=test vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:test": "vue-cli-service build --mode test",
+    "build:production": "vue-cli-service build",
+    "deploy:test": "cross-env NODE_ENV=test node deployer.js",
+    "deploy:production": "cross-env NODE_ENV=production node deployer.js",
   },
   "dependencies": {
     "axios": "^0.19.2",
